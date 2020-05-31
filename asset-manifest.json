@@ -1,23 +1,22 @@
 {
   "files": {
-    "main.css": "/Sudoku-Solver-Visualization/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/Sudoku-Solver-Visualization/static/js/main.79c8922a.chunk.js",
-    "main.js.map": "/Sudoku-Solver-Visualization/static/js/main.79c8922a.chunk.js.map",
+    "main.css": "/Sudoku-Solver-Visualization/static/css/main.d1296376.chunk.css",
+    "main.js": "/Sudoku-Solver-Visualization/static/js/main.2c24c362.chunk.js",
+    "main.js.map": "/Sudoku-Solver-Visualization/static/js/main.2c24c362.chunk.js.map",
     "runtime-main.js": "/Sudoku-Solver-Visualization/static/js/runtime-main.6448a4b9.js",
     "runtime-main.js.map": "/Sudoku-Solver-Visualization/static/js/runtime-main.6448a4b9.js.map",
     "static/js/2.cf10398a.chunk.js": "/Sudoku-Solver-Visualization/static/js/2.cf10398a.chunk.js",
     "static/js/2.cf10398a.chunk.js.map": "/Sudoku-Solver-Visualization/static/js/2.cf10398a.chunk.js.map",
     "index.html": "/Sudoku-Solver-Visualization/index.html",
-    "precache-manifest.b3b25b4dd9e464b8bdc3a5214d24132f.js": "/Sudoku-Solver-Visualization/precache-manifest.b3b25b4dd9e464b8bdc3a5214d24132f.js",
+    "precache-manifest.90ef3f31c83a0f46b502139c1641bef6.js": "/Sudoku-Solver-Visualization/precache-manifest.90ef3f31c83a0f46b502139c1641bef6.js",
     "service-worker.js": "/Sudoku-Solver-Visualization/service-worker.js",
-    "static/css/main.5ecd60fb.chunk.css.map": "/Sudoku-Solver-Visualization/static/css/main.5ecd60fb.chunk.css.map",
-    "static/js/2.cf10398a.chunk.js.LICENSE.txt": "/Sudoku-Solver-Visualization/static/js/2.cf10398a.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/Sudoku-Solver-Visualization/static/media/logo.5d5d9eef.svg"
+    "static/css/main.d1296376.chunk.css.map": "/Sudoku-Solver-Visualization/static/css/main.d1296376.chunk.css.map",
+    "static/js/2.cf10398a.chunk.js.LICENSE.txt": "/Sudoku-Solver-Visualization/static/js/2.cf10398a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.6448a4b9.js",
     "static/js/2.cf10398a.chunk.js",
-    "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.79c8922a.chunk.js"
+    "static/css/main.d1296376.chunk.css",
+    "static/js/main.2c24c362.chunk.js"
   ]
 }
