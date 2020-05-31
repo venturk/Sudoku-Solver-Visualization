@@ -1,0 +1,32 @@
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid black;
+}
+
+.td-left-border {
+    border-left: 5px solid black;
+}
+
+.td-right-border {
+    border-right: 5px solid black;
+}
+
+.td-top-border {
+    border-top: 5px solid black;
+}
+
+.td-bottom-border {
+    border-bottom: 5px solid black;
+}
+
+input[type=text] {
+    font-size: 3rem;
+    text-align: center;
+    border-color: transparent;
+    height: 4rem;
+    width: 4rem;
+}
