@@ -2,11 +2,12 @@
   "name": "sudoku-solver-visualization",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://venturk.github.io/sudoku-solver-visualization/",
+  "homepage": "https://venturk.github.io/Sudoku-Solver-Visualization/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "gh-pages": "^3.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
@@ -16,8 +17,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-	"predeploy": "yarn build",
-	"deploy": "gh-pages -d build"
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
