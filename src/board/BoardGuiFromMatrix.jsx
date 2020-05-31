@@ -1,6 +1,5 @@
 import React from 'react';
 import './BoardStyle.css';
-import getRandomizedBoard from './RandomizedBoardMatrix.jsx';
 
 const emptyBoard = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -15,7 +14,7 @@ const emptyBoard = [
   ];
 
 const Board = props => {
-    const board = props.children !== undefined ? props.children : getRandomizedBoard(props.numOfElements);
+    const board = props.children !== undefined ? props.children : emptyBoard;
 
     return (
         <table>
