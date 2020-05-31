@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/Sudoku-Solver-Visualization/static/css/main.5f361e03.chunk.css",
-    "main.js": "/Sudoku-Solver-Visualization/static/js/main.317573a1.chunk.js",
-    "main.js.map": "/Sudoku-Solver-Visualization/static/js/main.317573a1.chunk.js.map",
+    "main.css": "/Sudoku-Solver-Visualization/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/Sudoku-Solver-Visualization/static/js/main.79c8922a.chunk.js",
+    "main.js.map": "/Sudoku-Solver-Visualization/static/js/main.79c8922a.chunk.js.map",
     "runtime-main.js": "/Sudoku-Solver-Visualization/static/js/runtime-main.6448a4b9.js",
     "runtime-main.js.map": "/Sudoku-Solver-Visualization/static/js/runtime-main.6448a4b9.js.map",
-    "static/js/2.e04e8046.chunk.js": "/Sudoku-Solver-Visualization/static/js/2.e04e8046.chunk.js",
-    "static/js/2.e04e8046.chunk.js.map": "/Sudoku-Solver-Visualization/static/js/2.e04e8046.chunk.js.map",
+    "static/js/2.cf10398a.chunk.js": "/Sudoku-Solver-Visualization/static/js/2.cf10398a.chunk.js",
+    "static/js/2.cf10398a.chunk.js.map": "/Sudoku-Solver-Visualization/static/js/2.cf10398a.chunk.js.map",
     "index.html": "/Sudoku-Solver-Visualization/index.html",
-    "precache-manifest.d14dfcb11bcd90be69a793425d4ae8fe.js": "/Sudoku-Solver-Visualization/precache-manifest.d14dfcb11bcd90be69a793425d4ae8fe.js",
+    "precache-manifest.b3b25b4dd9e464b8bdc3a5214d24132f.js": "/Sudoku-Solver-Visualization/precache-manifest.b3b25b4dd9e464b8bdc3a5214d24132f.js",
     "service-worker.js": "/Sudoku-Solver-Visualization/service-worker.js",
-    "static/css/main.5f361e03.chunk.css.map": "/Sudoku-Solver-Visualization/static/css/main.5f361e03.chunk.css.map",
-    "static/js/2.e04e8046.chunk.js.LICENSE.txt": "/Sudoku-Solver-Visualization/static/js/2.e04e8046.chunk.js.LICENSE.txt",
+    "static/css/main.5ecd60fb.chunk.css.map": "/Sudoku-Solver-Visualization/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.cf10398a.chunk.js.LICENSE.txt": "/Sudoku-Solver-Visualization/static/js/2.cf10398a.chunk.js.LICENSE.txt",
     "static/media/logo.svg": "/Sudoku-Solver-Visualization/static/media/logo.5d5d9eef.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.6448a4b9.js",
-    "static/js/2.e04e8046.chunk.js",
-    "static/css/main.5f361e03.chunk.css",
-    "static/js/main.317573a1.chunk.js"
+    "static/js/2.cf10398a.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.79c8922a.chunk.js"
   ]
 }
