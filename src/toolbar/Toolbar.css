@@ -42,6 +42,11 @@
     color: #fa923f;
 }
 
+.num-of-elements {
+    color: white;
+    text-decoration: none;
+}
+
 button {
     border: none;
     padding: 0;
@@ -50,9 +55,4 @@ button {
     outline-width: 0px;
     font-size: 16px;
     cursor: pointer;
-}
-
-.num-of-elements {
-    color: white;
-    text-decoration: none;
 }
