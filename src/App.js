@@ -1,5 +1,6 @@
 import React from 'react';
 import Board from './board/Board.jsx'
+import Toolbar from './toolbar/Toolbar.jsx';
 
 const board = [
   [8, 2, 7, 1, 5, 4, 3, 9, 6],
@@ -16,6 +17,10 @@ const board = [
 function App() {
   return (
     <div className="App">
+      <Toolbar>
+        <button onClick="">Randomize Board</button>
+        <button onClick="">Solve</button>
+      </Toolbar>
       <Board>
         {board}
       </Board>
