@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/Sudoku-Solver-Visualization/static/css/main.de848048.chunk.css",
-    "main.js": "/Sudoku-Solver-Visualization/static/js/main.acc36f9a.chunk.js",
-    "main.js.map": "/Sudoku-Solver-Visualization/static/js/main.acc36f9a.chunk.js.map",
+    "main.js": "/Sudoku-Solver-Visualization/static/js/main.568a5554.chunk.js",
+    "main.js.map": "/Sudoku-Solver-Visualization/static/js/main.568a5554.chunk.js.map",
     "runtime-main.js": "/Sudoku-Solver-Visualization/static/js/runtime-main.6448a4b9.js",
     "runtime-main.js.map": "/Sudoku-Solver-Visualization/static/js/runtime-main.6448a4b9.js.map",
-    "static/js/2.2d2e61ad.chunk.js": "/Sudoku-Solver-Visualization/static/js/2.2d2e61ad.chunk.js",
-    "static/js/2.2d2e61ad.chunk.js.map": "/Sudoku-Solver-Visualization/static/js/2.2d2e61ad.chunk.js.map",
+    "static/js/2.3b033f08.chunk.js": "/Sudoku-Solver-Visualization/static/js/2.3b033f08.chunk.js",
+    "static/js/2.3b033f08.chunk.js.map": "/Sudoku-Solver-Visualization/static/js/2.3b033f08.chunk.js.map",
     "index.html": "/Sudoku-Solver-Visualization/index.html",
-    "precache-manifest.a5db73b9b1b250e7084ae60af23a6d4b.js": "/Sudoku-Solver-Visualization/precache-manifest.a5db73b9b1b250e7084ae60af23a6d4b.js",
+    "precache-manifest.6856445c5aca40b168fd7e75cba278b6.js": "/Sudoku-Solver-Visualization/precache-manifest.6856445c5aca40b168fd7e75cba278b6.js",
     "service-worker.js": "/Sudoku-Solver-Visualization/service-worker.js",
     "static/css/main.de848048.chunk.css.map": "/Sudoku-Solver-Visualization/static/css/main.de848048.chunk.css.map",
-    "static/js/2.2d2e61ad.chunk.js.LICENSE.txt": "/Sudoku-Solver-Visualization/static/js/2.2d2e61ad.chunk.js.LICENSE.txt"
+    "static/js/2.3b033f08.chunk.js.LICENSE.txt": "/Sudoku-Solver-Visualization/static/js/2.3b033f08.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.6448a4b9.js",
-    "static/js/2.2d2e61ad.chunk.js",
+    "static/js/2.3b033f08.chunk.js",
     "static/css/main.de848048.chunk.css",
-    "static/js/main.acc36f9a.chunk.js"
+    "static/js/main.568a5554.chunk.js"
   ]
 }
