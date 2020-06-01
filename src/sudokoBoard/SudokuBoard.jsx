@@ -4,12 +4,10 @@ import Toolbar from '../toolbar/Toolbar.jsx';
 import * as solver from '../solvingAlgorithm/SolvingAlgorithm.jsx';
 import getRandomizedBoard from '../board/RandomizedBoardMatrix.jsx';
 
-const NUM_OF_ELEMENTS = 35;
-
 export default class SudokuBoard extends React.Component {
     constructor(props) {
         super(props);
-
+        this.numOfElements = 35;
         this.state = {
             board: [],
         }
@@ -20,7 +18,7 @@ export default class SudokuBoard extends React.Component {
     }
 
     getNewRandomizedBoard = () => {
-        const board = getRandomizedBoard(NUM_OF_ELEMENTS);
+        const board = getRandomizedBoard(this.numOfElements);
         this.setState({ board: board });
     }
 
@@ -32,14 +30,19 @@ export default class SudokuBoard extends React.Component {
         this.setState({ board: board });
     }
 
+    onSliderChange = (event) => { // TODO implement onSliderChange
+        this.numOfElements = event.target.value;
+        this.getNewRandomizedBoard();
+    }
+
     render() {
         return (
             <div className="App">
-                <Toolbar>
+                <Toolbar onSliderChange={this.onSliderChange}>
                     <button onClick={this.getNewRandomizedBoard}>Randomize Board</button>
                     <button onClick={this.solve}>Solve</button>
                 </Toolbar>
-                <Board numOfElements={NUM_OF_ELEMENTS}>
+                <Board>
                     {this.state.board}
                 </Board>
             </div>
