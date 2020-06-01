@@ -11,6 +11,8 @@ export default class SudokuBoard extends React.Component {
     constructor(props) {
         super(props);
         this.numOfElements = 35;
+        this.isSolving = false;
+
         this.state = {
             board: [],
         }
@@ -21,9 +23,11 @@ export default class SudokuBoard extends React.Component {
     }
 
     getNewRandomizedBoard = () => {
-        this.setState({
-            board: getRandomizedBoard(this.numOfElements)
-        }, () => { this.fixInitialValues(); })
+        if (!this.isSolving) {
+            this.setState({
+                board: getRandomizedBoard(this.numOfElements)
+            }, () => { this.fixInitialValues(); })
+        }
     }
 
     fixInitialValues() {
@@ -39,11 +43,17 @@ export default class SudokuBoard extends React.Component {
     }
 
     solve = () => {
-        const seqArr = [];
-        const { board } = this.state;
-        console.log(board);
-        solver.solve(board, seqArr);
-        this.setState({ board: board });
+        if (!this.isSolving) {
+            this.isSolving = true;
+            const { board } = this.state;
+            const seqArr = solver.solve(board);
+
+            const boardCells = document.getElementsByClassName('table-cell-text');
+            setTimeout(() => {
+                this.setState({ board: board });
+                this.isSolving = false;
+            }, solver.solvingAnimation(boardCells, seqArr));
+        }
     }
 
     onSliderChange = (event) => { // TODO implement onSliderChange
@@ -53,19 +63,18 @@ export default class SudokuBoard extends React.Component {
 
     onUserInput = (event) => {
         const value = event.target.value % 10;
-        if(isNaN(value)) {
+        if (isNaN(value) || this.isSolving) {
             return;
         }
 
-        console.log(value);
-        const {board} = this.state;
+        const { board } = this.state;
         const index = event.target.className.split(' ')[1];
         const r = Math.floor(index / 9), c = index % 9;
 
-        if(board[r][c] !== value) {
+        if (board[r][c] !== value) {
             board[r][c] = solver.possible(board, r, c, value) ? value : board[r][c];
         }
-        this.setState({board: board});
+        this.setState({ board: board });
     }
 
     render() {

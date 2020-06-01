@@ -1,4 +1,4 @@
-export function solve(board, seqArr) {
+function solver(board, seqArr) {
     for (let i = 0; i < 9; ++i) {
         for (let j = 0; j < 9; ++j) {
             if (board[i][j] === 0) {
@@ -7,7 +7,7 @@ export function solve(board, seqArr) {
                         board[i][j] = v;
                         seqArr.push([i, j, v]); // sequence
 
-                        if (solve(board, seqArr)) {
+                        if (solver(board, seqArr)) {
                             return true;
                         }
 
@@ -22,6 +22,14 @@ export function solve(board, seqArr) {
     }
 
     return true;
+}
+
+export function solve(board) {
+    const seqArr = [];
+    solver(board, seqArr);
+
+    return seqArr;
+
 }
 
 export function possible(board, r, c, val) {
@@ -65,4 +73,30 @@ export function checkIfSolved(board) {
     }
     
     return true;
+}
+
+export function solvingAnimation(boardCells, seqArr) {
+    let timing = 0;
+    let solvingTimeMs = 5000;
+
+    // Mark all cells as read only
+    for (let i = 0; i < 9; ++i) {
+        for (let j = 0; j < 9; ++j) {
+            boardCells[i * 9 + j].readOnly = true;
+        }
+    }
+
+    const solvingSpeedMs = solvingTimeMs / seqArr.length <= 100 ? solvingTimeMs / seqArr.length : 100;
+
+    for (let i = 0; i < seqArr.length; ++i) {
+        const [r, c, val] = seqArr[i];
+        const color = val === 0 ? "red" : "green";
+
+        setTimeout(() => {
+            boardCells[r * 9 + c].style.color = color;
+            boardCells[r * 9 + c].value = val;
+        }, solvingSpeedMs * timing++);
+    }
+
+    return solvingSpeedMs * timing;
 }
