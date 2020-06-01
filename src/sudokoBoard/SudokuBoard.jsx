@@ -4,6 +4,9 @@ import Toolbar from '../toolbar/Toolbar.jsx';
 import * as solver from '../solvingAlgorithm/SolvingAlgorithm.jsx';
 import getRandomizedBoard from '../board/RandomizedBoardMatrix.jsx';
 
+const USER_COLOR = "lightblue";
+const DEFAULT_COLOR = "black";
+
 export default class SudokuBoard extends React.Component {
     constructor(props) {
         super(props);
@@ -18,8 +21,21 @@ export default class SudokuBoard extends React.Component {
     }
 
     getNewRandomizedBoard = () => {
-        const board = getRandomizedBoard(this.numOfElements);
-        this.setState({ board: board });
+        this.setState({
+            board: getRandomizedBoard(this.numOfElements)
+        }, () => { this.fixInitialValues(); })
+    }
+
+    fixInitialValues() {
+        const boardCells = document.getElementsByClassName('table-cell-text');
+        const { board } = this.state;
+
+        for (let i = 0; i < boardCells.length; ++i) {
+            const r = Math.floor(i / 9), c = i % 9;
+            boardCells[i].readOnly = (board[r][c] !== 0);
+            boardCells[i].style.color = boardCells[i].readOnly === false ? USER_COLOR : DEFAULT_COLOR;
+            boardCells[i].value = board[r][c] !== 0 ? board[r][c] : '';
+        }
     }
 
     solve = () => {
@@ -35,6 +51,23 @@ export default class SudokuBoard extends React.Component {
         this.getNewRandomizedBoard();
     }
 
+    onUserInput = (event) => {
+        const value = event.target.value % 10;
+        if(isNaN(value)) {
+            return;
+        }
+
+        console.log(value);
+        const {board} = this.state;
+        const index = event.target.className.split(' ')[1];
+        const r = Math.floor(index / 9), c = index % 9;
+
+        if(board[r][c] !== value) {
+            board[r][c] = solver.possible(board, r, c, value) ? value : board[r][c];
+        }
+        this.setState({board: board});
+    }
+
     render() {
         return (
             <div className="App">
@@ -42,7 +75,7 @@ export default class SudokuBoard extends React.Component {
                     <button onClick={this.getNewRandomizedBoard}>Randomize Board</button>
                     <button onClick={this.solve}>Solve</button>
                 </Toolbar>
-                <Board>
+                <Board onUserInput={this.onUserInput}>
                     {this.state.board}
                 </Board>
             </div>

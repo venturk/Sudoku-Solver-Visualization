@@ -33,7 +33,7 @@ const Board = props => {
                                             `
                                         }
                                         key={j} value={i * 9 + j}>
-                                        <input className={`table-cell-text ${i * 9 + j}`} type="text" value={val === 0 ? '' : val} onChange={props.onChange} />
+                                        <input className={`table-cell-text ${i * 9 + j}`} type="text" value={val === 0 ? '' : val} onChange={props.onUserInput} />
                                     </td>
                                 )
                             }
