@@ -36,9 +36,9 @@ export default class SudokuBoard extends React.Component {
 
         for (let i = 0; i < boardCells.length; ++i) {
             const r = Math.floor(i / 9), c = i % 9;
+
+            boardCells[i].style.color = board[r][c] === 0 ? USER_COLOR : DEFAULT_COLOR;
             boardCells[i].readOnly = (board[r][c] !== 0);
-            boardCells[i].style.color = boardCells[i].readOnly === false ? USER_COLOR : DEFAULT_COLOR;
-            boardCells[i].value = board[r][c] !== 0 ? board[r][c] : '';
         }
     }
 
@@ -46,24 +46,40 @@ export default class SudokuBoard extends React.Component {
         if (!this.isSolving) {
             this.isSolving = true;
             const { board } = this.state;
-            const seqArr = solver.solve(board);
+            const seqArr = solver.getSolvingSequence(board);
 
-            const boardCells = document.getElementsByClassName('table-cell-text');
             setTimeout(() => {
-                this.setState({ board: board });
+                this.setState({
+                    board: board
+                })
+
+                const boardCells = document.getElementsByClassName('table-cell-text');
+                const isSolved = solver.isSolved(board);
+
+                for (let i = 0; i < boardCells.length; ++i) {
+                    if(isSolved) {
+                        boardCells[i].style.color = DEFAULT_COLOR;
+                    } else {
+                        if (boardCells[i].value === '') {
+                            boardCells[i].style.color = USER_COLOR;
+                        }
+                        boardCells[i].readOnly = !(boardCells[i].style.color === USER_COLOR);
+                    }
+                }
+
                 this.isSolving = false;
-            }, solver.solvingAnimation(boardCells, seqArr));
+            }, solver.solvingAnimation(seqArr));
         }
     }
 
-    onSliderChange = (event) => { // TODO implement onSliderChange
+    onSliderChange = (event) => {
         this.numOfElements = event.target.value;
         this.getNewRandomizedBoard();
     }
 
     onUserInput = (event) => {
         const value = event.target.value % 10;
-        if (isNaN(value) || this.isSolving) {
+        if (isNaN(value)) {
             return;
         }
 

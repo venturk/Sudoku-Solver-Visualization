@@ -1,4 +1,12 @@
-function solver(board, seqArr) {
+export function getSolvingSequence(board) {
+    const seqArr = [];
+    solve(board, seqArr);
+
+    return seqArr;
+
+}
+
+function solve(board, seqArr) {
     for (let i = 0; i < 9; ++i) {
         for (let j = 0; j < 9; ++j) {
             if (board[i][j] === 0) {
@@ -7,7 +15,7 @@ function solver(board, seqArr) {
                         board[i][j] = v;
                         seqArr.push([i, j, v]); // sequence
 
-                        if (solver(board, seqArr)) {
+                        if (solve(board, seqArr)) {
                             return true;
                         }
 
@@ -22,14 +30,6 @@ function solver(board, seqArr) {
     }
 
     return true;
-}
-
-export function solve(board) {
-    const seqArr = [];
-    solver(board, seqArr);
-
-    return seqArr;
-
 }
 
 export function possible(board, r, c, val) {
@@ -62,7 +62,7 @@ export function possible(board, r, c, val) {
     return true;
 }
 
-export function checkIfSolved(board) {
+export function isSolved(board) {
     for (let i = 0; i < 9; ++i) {
         for (let j = 0; j < 9; ++j) {
             // If there's an empty cell --> board is NOT solved
@@ -75,9 +75,10 @@ export function checkIfSolved(board) {
     return true;
 }
 
-export function solvingAnimation(boardCells, seqArr) {
+export function solvingAnimation(seqArr) {
     let timing = 0;
     let solvingTimeMs = 5000;
+    const boardCells = document.getElementsByClassName('table-cell-text');
 
     // Mark all cells as read only
     for (let i = 0; i < 9; ++i) {
@@ -85,7 +86,7 @@ export function solvingAnimation(boardCells, seqArr) {
             boardCells[i * 9 + j].readOnly = true;
         }
     }
-
+    
     const solvingSpeedMs = solvingTimeMs / seqArr.length <= 100 ? solvingTimeMs / seqArr.length : 100;
 
     for (let i = 0; i < seqArr.length; ++i) {
