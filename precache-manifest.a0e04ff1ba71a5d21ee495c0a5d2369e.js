@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e14ea2152abf2b9c9b360b0bb62f952f",
+    "revision": "eedf465b1f5d77790c8f4f4d4af23053",
     "url": "/Sudoku-Solver-Visualization/index.html"
   },
   {
